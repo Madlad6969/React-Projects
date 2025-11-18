@@ -1,23 +1,74 @@
-function Login(){
-    return(
-        <>
-        <form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1"/>
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-        </>
-    )
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+function Login() {
+  const navigate = useNavigate();
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  // Your stored credentials
+  const userData = {
+    username: "Yath6969",
+    password: "24032003"   // make it a string for safer comparison
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Check username + password
+    if (username === userData.username && password === userData.password) {
+      localStorage.setItem("islogin", true);
+      navigate("/home");  // Go to home
+    } else {
+      alert("Invalid Username or Password");
+    }
+  };
+
+  return (
+    <>
+      <div className="d-flex justify-content-center align-items-center vh-100 bg-warning bg-gradient">
+
+        <div className="p-5 border border-dark border-3 rounded-4 shadow-lg bg-light"
+          style={{ width: "420px" }}>
+          <h3 className="text-center mb-4 text-dark fw-bold">Login</h3>
+
+          <form onSubmit={handleSubmit}>
+
+            <div className="mb-3">
+              <label className="form-label text-dark">Username</label>
+              <input
+                type="text"
+                className="form-control"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label text-dark">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+
+            <div className="mb-3 form-check">
+              <input type="checkbox" className="form-check-input" />
+              <label className="form-check-label text-dark">Remember me</label>
+            </div>
+
+            <button type="submit" className="btn btn-primary w-100 fw-bold">
+              Submit
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </>
+  );
 }
-export default Login
+
+export default Login;
