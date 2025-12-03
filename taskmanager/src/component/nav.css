@@ -1,0 +1,27 @@
+/* Background */
+.nav-dark {
+  background-color: #1E1E1E;
+}
+
+/* Brand Title Size */
+.brand-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Hover effect */
+.nav-hover {
+  transition: 0.2s;
+}
+
+.nav-hover:hover {
+  color: #00d084 !important;
+  transform: translateY(-1px);
+}
+
+/* Search box round */
+.search-box {
+  border-radius: 20px;
+  padding-left: 12px;
+}

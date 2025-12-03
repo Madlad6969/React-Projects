@@ -23,7 +23,7 @@ function App() {
       path: "/",
       element: <>
         <Nav handleChange={handleChange} />
-        <Home search={search} />
+        <Login search={search} />
       </>
     },
     {
