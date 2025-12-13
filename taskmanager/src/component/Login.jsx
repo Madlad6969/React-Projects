@@ -2,7 +2,7 @@ function Login() {
   return (
     <div className= "bg-warning ">
     <div className="d-flex justify-content-center align-items-center vh-100 ">
-      <div className="card p-5 shadow" style={{ width: "450px", height: "460px" ,marginLeft:"60px"}}>
+      <div className="card p-5 shadow" style={{ width: "400px", height: "400px" ,marginLeft:"60px"}}>
         
         <h3 className="text-center mb-4">Login</h3>
 
